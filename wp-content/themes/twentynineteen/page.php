@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
- * @since Twenty Nineteen 1.0
+ * @since 1.0.0
  */
 
 get_header();
@@ -17,7 +17,7 @@ get_header();
 
 			<?php
 
-			// Start the Loop.
+			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
 
@@ -28,7 +28,7 @@ get_header();
 					comments_template();
 				}
 
-			endwhile; // End the loop.
+			endwhile; // End of the loop.
 			?>
 
 		</main><!-- #main -->

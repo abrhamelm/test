@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
- * @since Twenty Seventeen 1.0
+ * @since 1.0
  */
 
 if ( ! function_exists( 'twentyseventeen_posted_on' ) ) :
@@ -80,7 +80,7 @@ if ( ! function_exists( 'twentyseventeen_entry_footer' ) ) :
 				if ( ( $categories_list && twentyseventeen_categorized_blog() ) || $tags_list ) {
 					echo '<span class="cat-tags-links">';
 
-					// Make sure there's more than one category before displaying.
+						// Make sure there's more than one category before displaying.
 					if ( $categories_list && twentyseventeen_categorized_blog() ) {
 						echo '<span class="cat-links">' . twentyseventeen_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="screen-reader-text">' . __( 'Categories', 'twentyseventeen' ) . '</span>' . $categories_list . '</span>';
 					}
@@ -133,9 +133,7 @@ function twentyseventeen_front_page_section( $partial = null, $id = 0 ) {
 	if ( is_a( $partial, 'WP_Customize_Partial' ) ) {
 		// Find out the id and set it up during a selective refresh.
 		global $twentyseventeencounter;
-
-		$id = str_replace( 'panel_', '', $partial->id );
-
+		$id                     = str_replace( 'panel_', '', $partial->id );
 		$twentyseventeencounter = $id;
 	}
 
@@ -150,13 +148,8 @@ function twentyseventeen_front_page_section( $partial = null, $id = 0 ) {
 		wp_reset_postdata();
 	} elseif ( is_customize_preview() ) {
 		// The output placeholder anchor.
-		printf(
-			'<article class="panel-placeholder panel twentyseventeen-panel twentyseventeen-panel%1$s" id="panel%1$s">' .
-			'<span class="twentyseventeen-panel-title">%2$s</span></article>',
-			$id,
-			/* translators: %s: The section ID. */
-			sprintf( __( 'Front Page Section %s Placeholder', 'twentyseventeen' ), $id )
-		);
+		/* translators: %s: The section ID. */
+		echo '<article class="panel-placeholder panel twentyseventeen-panel twentyseventeen-panel' . $id . '" id="panel' . $id . '"><span class="twentyseventeen-panel-title">' . sprintf( __( 'Front Page Section %s Placeholder', 'twentyseventeen' ), $id ) . '</span></article>';
 	}
 }
 
@@ -211,7 +204,7 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
 	 * Fire the wp_body_open action.
 	 *
-	 * Added for backward compatibility to support pre-5.2.0 WordPress versions.
+	 * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
 	 *
 	 * @since Twenty Seventeen 2.2
 	 */

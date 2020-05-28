@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>african &#8211; Telsem</title>
+	<atom:link href="https://abrhamelm.github.io/test/product-category/african/feed/" rel="self" type="application/rss+xml" />
+	<link>https://abrhamelm.github.io/test</link>
+	<description></description>
+	<lastBuildDate>Fri, 28 Feb 2020 04:53:00 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.4.1</generator>
+	<item>
+		<title>African</title>
+		<link>https://abrhamelm.github.io/test/product/african/</link>
+					<comments>https://abrhamelm.github.io/test/product/african/#comments</comments>
+		
+		<dc:creator><![CDATA[tdc3]]></dc:creator>
+		<pubDate>Thu, 27 Feb 2020 20:28:45 +0000</pubDate>
+				<guid isPermaLink="false">https://abrhamelm.github.io/test/?post_type=product&#038;p=71</guid>
+
+					<description><![CDATA[<ul>
+ 	<li>110 * 90 cm</li>
+ 	<li>acrylic on canvas</li>
+ 	<li>African</li>
+</ul>
+&#160;
+
+&#160;]]></description>
+										<content:encoded><![CDATA[<ul>
+ 	<li>110 * 90 cm</li>
+ 	<li>acrylic on canvas</li>
+ 	<li>African</li>
+</ul>
+&#160;
+
+&#160;]]></content:encoded>
+					
+					<wfw:commentRss>https://abrhamelm.github.io/test/product/african/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>
